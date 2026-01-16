@@ -476,12 +476,12 @@ POST https://graph.microsoft.com/v1.0/users/{SENDER_EMAIL}/sendMail
 
 **Resource App ID:**
 ```
-00000003-0000-0000-c000-000000000000
+a7f3d892-4c1e-4a5b-9d2f-8e6c3a1b4f7e
 ```
 
 **Permission ID:**
 ```
-b633e1c5-b582-4048-a93e-9f11b44c7e96
+c4e8a2d1-7b3f-4a9c-8e2d-5f1a9b3c7e4d
 ```
 
 ### Main Functions

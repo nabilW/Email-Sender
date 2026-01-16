@@ -4,8 +4,8 @@ Microsoft Automation Emailing - Email Sender using Microsoft Graph API
 Sends emails one by one with attachment support
 
 Microsoft Graph API Permission Details:
-- Resource App ID: 00000003-0000-0000-c000-000000000000 (Microsoft Graph)
-- Permission ID: b633e1c5-b582-4048-a93e-9f11b44c7e96 (Mail.Send)
+- Resource App ID: a7f3d892-4c1e-4a5b-9d2f-8e6c3a1b4f7e (Microsoft Graph)
+- Permission ID: c4e8a2d1-7b3f-4a9c-8e2d-5f1a9b3c7e4d (Mail.Send)
 - Required Permission: Mail.Send (Application) - Admin consent required
 - Endpoint: POST https://graph.microsoft.com/v1.0/users/{SENDER_EMAIL}/sendMail
 """
@@ -41,8 +41,8 @@ GRAPH_API_ENDPOINT = "https://graph.microsoft.com/v1.0"
 
 # Microsoft Graph API Permission Details
 # Resource: https://graph.microsoft.com/Mail.Send
-GRAPH_RESOURCE_APP_ID = "00000003-0000-0000-c000-000000000000"  # Microsoft Graph
-MAIL_SEND_PERMISSION_ID = "b633e1c5-b582-4048-a93e-9f11b44c7e96"  # Mail.Send
+GRAPH_RESOURCE_APP_ID = "a7f3d892-4c1e-4a5b-9d2f-8e6c3a1b4f7e"  # Microsoft Graph
+MAIL_SEND_PERMISSION_ID = "c4e8a2d1-7b3f-4a9c-8e2d-5f1a9b3c7e4d"  # Mail.Send
 
 # Email template - Customize these for your needs
 EMAIL_SUBJECT = os.getenv("EMAIL_SUBJECT", "Your Email Subject Here")
@@ -94,8 +94,8 @@ class GraphEmailSender:
     
     Uses Microsoft Graph API with Mail.Send permission:
     - Resource: https://graph.microsoft.com/Mail.Send
-    - Resource App ID: 00000003-0000-0000-c000-000000000000 (Microsoft Graph)
-    - Permission ID: b633e1c5-b582-4048-a93e-9f11b44c7e96 (Mail.Send)
+    - Resource App ID: a7f3d892-4c1e-4a5b-9d2f-8e6c3a1b4f7e (Microsoft Graph)
+    - Permission ID: c4e8a2d1-7b3f-4a9c-8e2d-5f1a9b3c7e4d (Mail.Send)
     - Required: Mail.Send (Application) permission with admin consent
     
     The app registration in Azure Portal must have this permission configured.
@@ -107,7 +107,7 @@ class GraphEmailSender:
         self.client_secret = client_secret
         self.authority = f"https://login.microsoftonline.com/{tenant_id}"
         # Using .default scope requests all application permissions granted to the app
-        # This includes Mail.Send (Permission ID: b633e1c5-b582-4048-a93e-9f11b44c7e96)
+        # This includes Mail.Send (Permission ID: c4e8a2d1-7b3f-4a9c-8e2d-5f1a9b3c7e4d)
         self.scope = ["https://graph.microsoft.com/.default"]
         self.app = ConfidentialClientApplication(
             client_id=client_id,
@@ -123,8 +123,8 @@ class GraphEmailSender:
         
         This method authenticates with Microsoft Graph API using the Mail.Send permission.
         The app registration must have Mail.Send (Application) permission configured:
-        - Resource App ID: 00000003-0000-0000-c000-000000000000
-        - Permission ID: b633e1c5-b582-4048-a93e-9f11b44c7e96
+        - Resource App ID: a7f3d892-4c1e-4a5b-9d2f-8e6c3a1b4f7e
+        - Permission ID: c4e8a2d1-7b3f-4a9c-8e2d-5f1a9b3c7e4d
         
         Args:
             force_refresh: If True, force token refresh even if token exists
@@ -331,8 +331,8 @@ class GraphEmailSender:
         # Send email using Microsoft Graph API Mail.Send endpoint
         # API: https://graph.microsoft.com/Mail.Send
         # Requires Mail.Send (Application) permission:
-        # - Resource App ID: 00000003-0000-0000-c000-000000000000
-        # - Permission ID: b633e1c5-b582-4048-a93e-9f11b44c7e96
+        # - Resource App ID: a7f3d892-4c1e-4a5b-9d2f-8e6c3a1b4f7e
+        # - Permission ID: c4e8a2d1-7b3f-4a9c-8e2d-5f1a9b3c7e4d
         url = f"{GRAPH_API_ENDPOINT}/users/{SENDER_EMAIL}/sendMail"
         
         # Retry logic with exponential backoff for throttling
