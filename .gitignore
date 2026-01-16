@@ -35,3 +35,6 @@ recipients.txt
 .DS_Store
 Thumbs.db
 
+# Backup files
+.env.backup
+*.backup
