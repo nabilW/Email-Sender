@@ -1,0 +1,7 @@
+# Example recipients file
+# Place one email address per line
+# Lines starting with # are ignored
+
+example1@example.com
+example2@example.com
+example3@example.com
